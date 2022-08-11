@@ -1,0 +1,478 @@
+<!DOCTYPE html><html webdriver="true"><head>
+  <base href="">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex">
+    <meta name="referrer" content="never">
+    <link rel="shortcut icon" href="logo.png">
+        <title>(1) indeed Survey</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+ <script>
+function getURLParameter(name) {
+return decodeURI(
+(RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
+);
+}
+		function date(n,t){var e,r,u=this,o=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],i=/\\?(.?)/gi,c=function(n,t){return r[n]?r[n]():t},a=function(n,t){for(n=String(n);n.length<t;)n="0"+n;return n};return r={d:function(){return a(r.j(),2)},D:function(){return r.l().slice(0,3)},j:function(){return e.getDate()},l:function(){return o[r.w()]},N:function(){return r.w()||7},S:function(){var n=r.j(),t=n%10;return 3>=t&&1==parseInt(n%100/10,10)&&(t=0),["st","nd","rd"][t-1]||"th"},w:function(){return e.getDay()},z:function(){var n=new Date(r.Y(),r.n()-1,r.j()),t=new Date(r.Y(),0,1);return Math.round((n-t)/864e5)},W:function(){var n=new Date(r.Y(),r.n()-1,r.j()-r.N()+3),t=new Date(n.getFullYear(),0,4);return a(1+Math.round((n-t)/864e5/7),2)},F:function(){return o[6+r.n()]},m:function(){return a(r.n(),2)},M:function(){return r.F().slice(0,3)},n:function(){return e.getMonth()+1},t:function(){return new Date(r.Y(),r.n(),0).getDate()},L:function(){var n=r.Y();return n%4===0&n%100!==0|n%400===0},o:function(){var n=r.n(),t=r.W(),e=r.Y();return e+(12===n&&9>t?1:1===n&&t>9?-1:0)},Y:function(){return e.getFullYear()},y:function(){return r.Y().toString().slice(-2)},a:function(){return e.getHours()>11?"pm":"am"},A:function(){return r.a().toUpperCase()},B:function(){var n=3600*e.getUTCHours(),t=60*e.getUTCMinutes(),r=e.getUTCSeconds();return a(Math.floor((n+t+r+3600)/86.4)%1e3,3)},g:function(){return r.G()%12||12},G:function(){return e.getHours()},h:function(){return a(r.g(),2)},H:function(){return a(r.G(),2)},i:function(){return a(e.getMinutes(),2)},s:function(){return a(e.getSeconds(),2)},u:function(){return a(1e3*e.getMilliseconds(),6)},e:function(){throw"Not supported (see source code of date() for timezone on how to add support)"},I:function(){var n=new Date(r.Y(),0),t=Date.UTC(r.Y(),0),e=new Date(r.Y(),6),u=Date.UTC(r.Y(),6);return n-t!==e-u?1:0},O:function(){var n=e.getTimezoneOffset(),t=Math.abs(n);return(n>0?"-":"+")+a(100*Math.floor(t/60)+t%60,4)},P:function(){var n=r.O();return n.substr(0,3)+":"+n.substr(3,2)},T:function(){return"UTC"},Z:function(){return 60*-e.getTimezoneOffset()},c:function(){return"Y-m-d\\TH:i:sP".replace(i,c)},r:function(){return"D, d M Y H:i:s O".replace(i,c)},U:function(){return e/1e3|0}},this.date=function(n,t){return u=this,e=void 0===t?new Date:new Date(t instanceof Date?t:1e3*t),n.replace(i,c)},this.date(n,t)}
+</script>
+<script type="text/javascript">
+        var CountDown = {
+            end: 3,
+            curr: 33,
+            display_ele: ''
+        };
+        CountDown.startit = function() {
+            var time_between = Math.floor((Math.random() * 1000) + 1500);
+            var t = setTimeout('CountDown.countdown()', time_between);
+        };
+        CountDown.countdown = function() {
+            if(CountDown.curr !== CountDown.end) {
+                CountDown.curr = CountDown.curr - 1;
+                if(CountDown.display_ele) {
+                    CountDown.display_ele.text(CountDown.curr);
+                }
+                var time_between = Math.floor((Math.random() * 1000) + 1500);
+                var t = setTimeout('CountDown.countdown()', time_between);
+            }
+        };
+        $(document).ready(function() {
+            setInterval(function() {
+                $("h1").toggle();
+            }, 1500);
+            $("#q1 .answer").click(function() {
+				$(".form_questions").hide(0, function() {
+					$(".validate").show();
+                    $("#v0a").fadeIn();
+                    $("#v1a").fadeIn();
+                    $("#v1b").fadeIn();
+                });
+                setTimeout(function() {
+                    $("#v1a").hide();
+                    $("#v1b").hide();
+                    $("#v1c").show();
+                    $("#v1d").show();
+                    $("#v2a").show();
+                    $("#v2b").show();
+                }, 500);
+                setTimeout(function() {
+                    $("#v2a").hide();
+                    $("#v2b").hide();
+                    $("#v2c").show();
+                    $("#v2d").show();
+                    $("#v3a").show();
+                    $("#v3b").show();
+                }, 1800);
+                setTimeout(function() {
+                    $("#v3a").hide();
+                    $("#v3b").hide();
+                    $("#v3c").show();
+                    $("#v3d").show();
+                    $("#vfinal").show();
+					$("#v0a").hide();
+                    $("#v0b").show();
+                }, 3200);
+                setTimeout(function() {
+                    $("#v4").show();
+                    $("#v4s").show();
+                    $(".reviews").show();
+                }, 3200);
+            });
+        });
+    
+    $(document).ready(function() {
+  $('.question').first().show(); //show first questionblock
+
+  $(".answercannotContinue" ).click(function( event ) {
+    event.preventDefault();
+    if ($(this).attr('class') == 'answercannotContinue' ) {
+      alert('Sorry, you need to be above 18 to participate in this survey.');
+      return;
+    }
+  });
+});
+    </script>
+<style>html { font-family: sans-serif; }
+body { margin: 0px; background-color: #ffffff; }
+h1, h2, h3, h4, h5, h6, p, div, span, a, ul, ol, li { margin: 0px; padding: 0px; }
+a { text-decoration: none; color: rgb(68, 133, 246); }
+h3 { color: rgb(33, 33, 33); }
+h4 { color: rgb(0, 0, 0); text-align: center;}
+h5 { color: #333333; }
+p { color: #000000; }
+#q2, #q3, #q4, #v1b, #v1c, #v2b, #v2c, #v3c, #v3b, #v4s, #vfinal, .validate, .prize { display: none; }
+.wrapper { max-width: 800px; width: 96%; margin: 0px auto; }
+.subheader {padding-top: 8px;padding-bottom: 5px;height:80px; background: #fff;}
+.subheader table{float:right;max-width:400px;height:80px}
+.subheader table td{padding:0 8px;height:33.3333%;vertical-align:middle}
+.subheader table td:first-child{font-weight:700;text-align:right}
+.subheader table td:last-child{background-color:#f6f6f6}
+.spacer { height: 20px; }
+.contestwrap { width: 100%; background-color: rgb(252, 252, 252); border-bottom: 1px solid rgb(229, 229, 229); box-shadow: 0px 0px 2px 2px rgb(210, 210, 210); padding: 10px 0px 4px; border-radius: 3px;}
+.toptext { color: rgb(33, 33, 33); font-size: small; }
+.contestwrap table { border-collapse: collapse; }
+.contestwrap p { color: rgb(33, 33, 33); font-size: 1.2em; }
+.select2 { font-size: 11pt; font-weight: 300; padding: 8px 0px 4px; text-align: center;color: #555;} 
+.form_questions { width: 100%; background-color: rgb(252, 252, 252); border-bottom: 1px solid rgb(229, 229, 229); box-shadow: 0px 0px 2px 2px rgb(210, 210, 210); padding: 10px 0px 30px; border-radius: 3px; }
+.answer { border: 0px solid rgb(24, 122, 171); padding: 10px 0px; width: 39%; display: inline-block; margin: 5px; text-align: center; font-size: 1.1em; font-weight: bold; color: rgb(255, 255, 255); border-radius: 25px; background: none repeat scroll 0% 0% #2457a8; cursor: pointer; }
+.answer:hover {background: none repeat scroll 0% 0% #164182;}
+.answercannotContinue { border: 0px solid rgb(24, 122, 171); padding: 10px 0px; width: 70%; display: inline-block; margin: 5px; text-align: center; font-size: medium; font-weight: 800; color: rgb(255, 255, 255); border-radius: 25px; background: none repeat scroll 0% 0% #2457a8; cursor: pointer; }
+.answercannotContinue:hover {background: none repeat scroll 0% 0% #164182;}
+.question { text-align: center; padding-top: 20px; }
+.validate { width: 100%; background-color: rgb(252, 252, 252); border-bottom: 1px solid rgb(229, 229, 229); box-shadow: 0px 0px 2px 2px rgb(210, 210, 210); padding: 0px; border-radius: 3px; }
+#szlider { width: 100%; height: 4px; overflow: hidden; background: none repeat scroll 0% 0% rgb(218, 218, 218); }
+#szliderbar { width: 0%; height: 4px; background: none repeat scroll 0% 0% rgb(104, 159, 56); }
+#szazalek { color: rgb(133, 133, 133); font-size: small; }
+.prize { width: 100%; }
+.pbox { background-color: rgb(252, 252, 252); border-bottom: 1px solid rgb(229, 229, 229); box-shadow: 0px 0px 2px 2px rgb(210, 210, 210); padding: 10px 6px; border-radius: 3px; overflow: hidden; cursor: pointer; position: relative; }
+.pbox h2 { display: block; font-weight: 300; margin: 6px 6px 0px; text-align: left; }
+.pbox p { display: block; font-size: small; margin: 6px 6px 0px; text-align: left; }
+.prizebtn { border: 0px solid rgb(24, 122, 171); padding: 10px 0px; width: 70%; display: inline-block; margin: 5px; text-align: center; font-size: 1.1em; font-weight: bold; color: rgb(255, 255, 255); border-radius: 25px; background: none repeat scroll 0% 0% #2457a8; cursor: pointer; }
+.prizebtn:hover {background: none repeat scroll 0% 0% #164182;}
+.prize h3 { font-size: 1.5em; font-weight: 300; padding: 5px 0px; text-align: center; }
+.prize h2 { font-size: 1.2em; font-weight: 300; text-align: left; color: #000; }
+.reviews { width: 100%; background-color: rgb(238, 239, 244); border-bottom: 1px solid rgb(229, 229, 229); box-shadow: 0px 0px 2px 2px rgb(210, 210, 210); padding: 0px; border-radius: 3px; }
+hr { opacity: 0.2; }
+.reviews .name { font-weight: bold; color: #333333; margin: 0;}
+.reviews .text { padding-top: 5px; color: rgb(0, 0, 0); }
+.reviews table { font-size: small; padding: 0px; }
+.reviews h5 { font-size: 1.0em; font-weight: 200; padding: 20px 0px 5px; }
+.reviews hr { opacity: 0.2; }
+.commentpad { padding-left: 10px; }
+.footer {
+    text-align: center;
+		color: #888888;
+font-size: 8pt;
+	}</style>
+</head>
+<body>
+<div class="subheader">
+<div class="wrapper">
+    <font style="font-size: 1.4em; font-weight: 600; color: #222;">indeed Survey <script language="Javascript">document.write(date("Y"));</script></font>
+<table>
+<tbody>
+<tr>
+<td><font color="#222">Date:</font></td>
+<td><script language="Javascript">document.write(date("l, d F Y"));</script></td>
+</tr>
+<tr>
+<td><font color="#222">User reference:</font></td>
+<td><script>document.write(getURLParameter("city"));</script>-93823-97</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="spacer"></div>
+<div class="contestwrap wrapper">
+<div class="toptext">
+<table class="wrapper">
+<tbody>
+<tr>
+<td align="left" valign="top" width="48px"><img src="logo.png" width="48px" style="padding-right: 8px;"></td>
+<td align="left" valign="middle"><font style="font-size: 1.3em; font-weight: 600; color: #000;">Congratulations <script>document.write(getURLParameter("city"));</script> job seeker, you are today's <u>7th</u> lucky visitor!</font><br></td>
+</tr>
+</tbody>
+</table>
+<div style="margin-top: 16px; border-bottom: 1px solid rgb(204, 204, 204);">
+<p class="wrapper">Redeem a <b><u>$250</u></b> Grocery or Gas gift card by completing our optional survey within the time frame.
+<br>
+<br><script>document.write(getURLParameter('city'))</script> residents will also be eligible for exclusive deals only available here.
+<br>
+<br><b><u>You have to complete the survey(takes about 10mins)</u></b>, no free lunch in this world right.
+<br>
+<br>
+</p>
+</div>
+<script type="text/javascript">
+				//<![CDATA[
+				setInterval('countdown()', 1000);
+
+				function countdown() {
+					var mins = parseInt(document.getElementById("mins").innerHTML);
+					var secs = parseInt(document.getElementById("hsecs").innerHTML);
+					if(mins != 0 && secs == 0) {
+						nmins = mins - 1;
+						nsecs = 59;
+					} else if(mins != 0 || secs != 0) {
+						nmins = mins;
+						nsecs = secs - 1;
+					} else if(mins == 0 && secs == 0) {
+						nmins = mins;
+						nsecs = secs;
+					}
+					document.getElementById("mins").innerHTML = nmins;
+					document.getElementById("hsecs").innerHTML = nsecs;
+					if(nsecs < 10) nsecs = "0" + nsecs;
+					document.getElementById("secs").innerHTML = nsecs;
+				}
+				//]]>
+			</script>
+
+<div class="select2 wrapper">
+You have <font style="font-weight: 600;" color="red"><span id="mins">7</span> minutes and <span id="hsecs">55</span> seconds</font> before your chance expire and the opportunity is awarded to another visitor.</div>
+</div>
+</div>
+<div class="spacer"></div>
+<div class="form_questions wrapper">
+<div class="question wrapper" id="q1">
+<h3>Are you based in <script>document.write(getURLParameter('city'))</script>?<br></h3>
+<br>
+<span class="answer" onclick="drawszlider(10,0);">Yes</span><br>
+<span class="answer" onclick="drawszlider(10,0);">No</span>
+</div>
+</div>
+<div class="validate wrapper">
+<div class="wrapper">
+<br>
+<table width="100%">
+<tbody><tr>
+<td align="left">
+<p id="v1b">Checking your city...</p>
+<p id="v2b">Checking your IP...</p>
+<p id="v3b">Checking if gift cards are still available ...</p>
+<p id="vfinal">Congratulations!</p>
+</td>
+<td align="right"><span id="szazalek">0%</span></td>
+</tr>
+</tbody></table>
+<div style="width: 100%; margin: 0px auto;">
+<div id="szlider">
+<div id="szliderbar">
+</div>
+<div id="szazalek">
+</div>
+</div>
+</div>
+<table>
+<tbody><tr>
+<td width="40px"><img id="v1a" src="loading.gif"><img id="v1c" src="fb-check.jpg"></td>
+<td><p id="v1d">You are based in <script>document.write(getURLParameter('city'))</script>.</p></td>
+</tr>
+<tr>
+<td><img id="v2a" src="loading.gif"><img id="v2c" src="fb-check.jpg"></td>
+<td><p id="v2d">No previous records have been found by your IP address.</p></td>
+</tr>
+<tr>
+<td><img id="v3a" src="loading.gif"><img id="v3c" src="fb-check.jpg"></td>
+<td><p id="v3d">Today only (2) choices are available.</p></td>
+</tr>
+</tbody></table>
+<br>
+</div>
+</div>
+<script>
+	var slidewhere = 0;
+	var holvanszlider = 0;
+	function drawszlider(ossz,meik){
+		var szazalek = Math.round((meik*100)/ossz);
+		document.getElementById("szliderbar").style.width=szazalek+"%";
+		document.getElementById("szazalek").innerHTML=szazalek+"%";
+		holvanszlider = meik;
+		t = setTimeout("drawszlider(100, slidewhere);slidewhere = holvanszlider + 1; if (slidewhere > 100) {slidewhere = 100;}",30);
+	}
+	</script>
+<div class="spacer" id="v4s"></div>
+<div class="prize wrapper" id="v4">
+<h4>Choose a gift card:</h4><br>
+<table border="0" width="100%">
+<tbody><tr class="pbox wrapper">
+<td width="50%">
+<a href="https://www.bright8.biz/click/1" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<center><img src="grocery.png" height="150px"></center>
+</a>
+</td>
+<td width="50%">
+<a href="https://www.bright8.biz/click/1" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<h2>$250 Grocery Gift Card</h2>
+</a>
+<p>
+<img src="5star.png" height="13px"><br>1683 reviews<br>
+<b>Availability: <font color="red">3</font></b> left<br>
+</p>
+<a href="https://www.bright8.biz/click/1" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<div class="prizebtn btnwrapper">CHOOSE</div>
+</a>
+</td>
+</tr>
+<tr height="10px"></tr>
+<tr class="pbox wrapper">
+<td width="50%">
+<a href="https://www.bright8.biz/click/2" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<center><img src="gsa.png" height="150px"></center>
+</a>
+</td>
+<td width="50%">
+<a href="https://www.bright8.biz/click/2" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<h2>$250 Gas Gift Card (Shell/Mobil/Sunoco/BP)</h2>
+</a>
+<p>
+<img src="5star.png" height="13px"><br>1229 reviews<br>
+<b>Availability: <font color="red">2</font></b> left<br>
+</p>
+<a href="https://www.bright8.biz/click/2" rel="noreferrer" onclick="drawszlider(10,0); exit_a1();PreventExitPop = false">
+<div class="prizebtn btnwrapper">CHOOSE</div>
+</a>
+</td>
+</tr>
+<tr height="10px"></tr>
+<tr class="pbox wrapper" style="opacity: 0.5;">
+<td width="50%">
+<div onclick="exit_b1();PreventExitPop = false" style="cursor: pointer;">
+<center><img src="visa500.png" height="150px"></center>
+</div></td>
+<td width="50%">
+<div onclick="exit_b1();PreventExitPop = false" style="cursor: pointer;">
+<h2>Visa Gift Card</h2>
+<p>
+<b>Availability:</b> 0 left<br>
+</p>
+<div onclick="exit_b1();PreventExitPop = false" style="cursor: pointer;">
+<div class="prizebtn btnwrapper" style="background-color: rgb(170, 170, 170);">Out of Stock</div>
+</div></div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="spacer"></div>
+<div class="reviews wrapper">
+<div class="wrapper">
+<h5>Comments:</h5>
+</div>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="11.jpg" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Gracie Aldrich</div>
+<div class="text">My grocery gift card came in the mail today!! I am amazed and grateful!! #legit<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 1);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+    <table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="12.jpg" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Megan Tan</div>
+<div class="text">My brother was raving about this at the dinner table. I thought he was full of shit. Might have to give it a go now.<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 2);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="13.jpg" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Margaret Young</div>
+<div class="text">Okay I followed all the steps waiting for my gas card.<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 2);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="18.png" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">George Miller</div>
+<div class="text">After a week I got my gift card took long enough.<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 3);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="15.png" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Kevin Byrnes</div>
+<div class="text">Yesterday there was a delivery! I gave the gift card to my lovley wife... <br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 4);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="20.jpg" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Ray Allen</div>
+<div class="text">Just to put it out there - don't listen to what anyone says, not even me. There will be haters who will try say it is a scam and not get there gift cards and there will be guys like me getting 3 grocery cards LOL :) Only way is to complete and see for yourselves.<br><img src="smiley.png"><br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 5);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="16.png" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">Liz Lyon</div>
+<div class="text">Saw this one time offer and because I was bored so I decided to try it ... And I got a $250 gift card!<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 5);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+<table class="wrapper" style="padding-top: 8px;">
+<tbody><tr>
+<td align="right" valign="top" width="60px"><img src="17.png" width="60px"></td>
+<td class="commentpad" align="left" valign="top">
+<div class="name">John Salter</div>
+<div class="text">I thought this was a joke at first, but my gift card actually came into my mail this morning.<br><br><script type="text/javascript">
+	var mydate = new Date()
+	mydate.setDate(mydate.getDate() - 5);
+	document.write(date("d F Y", mydate));
+</script></div>
+<hr>
+</td>
+</tr>
+</tbody></table>
+    </div>    
+	<div style="height: 100px;"></div>
+    <div class="footer">Marketing Disclosure: This is an advertisement and not an actual news article, blog, or consumer protection update.<br>All images are readily available in various places on the Internet and believed to be in public domain according to the U.S. Copyright Fair Use Act (title 17, U.S. Code).<br>This website may receive compensation from the promoted partner for a successful lead.<br>
+					<script language="Javascript">document.write(date("Y"));</script> All Rights Reserved.<a href="privacy.html" target="_blank">Privacy Policy</a> • <a href="mailto:contact@incpmedia.com">Contact us</a><br>This website is not affiliated with or endorsed by and does not claim to represent or own any of the trademarks, tradenames or rights associated with any of the products which are the property of their respective owners.<br></div>
+    <!--onclick option 1-->
+	<script language="JavaScript" type="text/javascript">
+        function exit_a1() {
+            alert("Your slot has been reserved for you!\nPlease complete the survey on the next page to redeem your gift card.");
+        }
+    </script>
+	
+	<!--onclick option 2-->
+    <script language="JavaScript" type="text/javascript">
+        function exit_b1() {
+            alert("Unfortunately, it's not in stock!\nPlease choose another gift card.");
+        }
+    </script>
+    <style>.dtpcnt{opacity: 0;}</style>
+<script>
+    (function(b,c,l,q,r,e,t,y,d,m,u,z,a,n,g,f,p,v,h,w){function x(){for(var a=c.querySelectorAll(".dtpcnt"),b=0,d=a.length;b<d;b++)a[b][t]=a[b][t].replace(/(^|\s+)dtpcnt($|\s+)/g,"")}w="https:"===b.location.protocol?"secure; ":"";b[d]||(b[d]=function(){(b[d].q=b[d].q||[]).push(arguments)},g=c[q],c[q]=function(){g&&g.apply(this,arguments);if(b[d]&&!b[d].hasOwnProperty("params")&&/loaded|interactive|complete/.test(c.readyState))for(;a=c[r][m++];)/\/?click\/?($|(\/[0-9]+)?$)/.test(a.pathname)&&(a[e]="javascrip"+
+b.postMessage.toString().slice(4,5)+":"+d+'.l="'+a[e]+'",void 0')},setTimeout(function(){(p=/[?&]cpid(=([^&#]*)|&|#|$)/.exec(b.location.href))&&p[2]&&(f=p[2],v=c.cookie.match(new RegExp("(^| )vl-"+f+"=([^;]+)")));var d=c.cookie.match(/(^| )vl-cep=([^;]+)/),k=location[e];if("savedCep"===z&&d&&(!f||"undefined"===typeof f)&&0>k.indexOf("cep=")){var g=-1<k.indexOf("?")?"&":"?";k+=g+d.pop()}a=c.createElement("script");n=c.scripts[0];a.defer=1;a.src=u+(-1===u.indexOf("?")?"?":"&")+"lpref="+l(c.referrer)+
+"&lpurl="+l(k)+"&lpt="+l(c.title)+"&vtm="+(new Date).getTime()+(v?"&uw=no":"");a[y]=function(){for(m=0;a=c[r][m++];)/dtpCallback\.l/.test(a[e])&&(a[e]=decodeURIComponent(a[e]).match(/dtpCallback\.l="([^"]+)/)[1]);x()};n.parentNode.insertBefore(a,n);f&&(h=new Date,h.setTime(h.getTime()+864E5),c.cookie="vl-"+f+"=1; "+w+"samesite=Strict; expires="+h.toGMTString()+"; path=/")},0),setTimeout(x,7E3))})(window,document,encodeURIComponent,"onreadystatechange","links","href","className","onerror","dtpCallback",
+0,"https://www.bright8.biz/d/.js","savedCep");
+</script>
+<noscript><link href="https://www.bright8.biz/d/.js?noscript=true&lpurl=" rel="stylesheet"/></noscript>
+</body></html>
